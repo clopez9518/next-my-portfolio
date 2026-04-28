@@ -9,7 +9,7 @@ const projects = [
         title: "E-commerce",
         description:
             "Tienda en línea con funcionalidades completas, integración de pagos, gestión de inventario y sistema avanzado de filtrado de productos.",
-        image: "/assets/ecommerce2.png",
+        image: "/assets/ecommerce2.webp",
         tags: ["Next.js", "PayPal API", "Prisma", "Postgres", "Tailwind CSS"],
         liveUrl: "https://next-teslo-shop-bay-one.vercel.app/",
         githubUrl: "https://github.com/clopez9518/next-teslo-shop",
@@ -19,7 +19,7 @@ const projects = [
         title: "Movies Platform",
         description:
             "API RESTful construida en .NET bajo Clean Architecture, separando responsabilidades en capas de dominio, aplicación, infraestructura y presentación. Aplica principios SOLID, Dependency Injection y patrones orientados a bajo acoplamiento y alta cohesión. Incluye autenticación basada en JWT, manejo de perfiles de usuario, gestión de catálogo de películas, listas personalizadas y paginación eficiente. Diseñada como backend escalable para un frontend de streaming desarrollado en React.",
-        image: "/assets/movies-platform.png",
+        image: "/assets/movies-platform.webp",
         tags: [
             ".NET",
             "ASP.NET Core",
