@@ -32,6 +32,20 @@ const projects = [
         ],
         liveUrl: "https://react-frontend-movies.vercel.app/",
         githubUrl: "https://github.com/clopez9518/dotnet-backend-movies",
+    },
+    {
+        title: "Dota Random",
+        description:
+            "Dota Random es una aplicación web para jugadores de Dota 2 que permite obtener héroes aleatorios según la posición seleccionada, como Carry, Mid, Offlane o Support. Los usuarios pueden personalizar el grupo de héroes disponibles para cada rol y generar recomendaciones de forma rápida mediante una interfaz moderna, minimalista y responsive.",
+        image: "/assets/dota-random.webp",
+        tags: [
+            "React",
+            "Shadcn",
+            "Tailwind CSS",
+            "Motion"
+        ],
+        liveUrl: "https://react-dota-random.vercel.app/",
+        githubUrl: "https://github.com/clopez9518/react-dota-random",
     }
 ];
 
