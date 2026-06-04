@@ -1,150 +1,95 @@
-'use client';
+"use client";
 
 import { motion } from "motion/react";
-import { Code, Database, Cloud, Wrench, Server, ToolCase, BookOpenText, Layers3 } from "lucide-react";
+import { BookOpenText, Cloud, Code, Database, Layers3, Server, ToolCase, Wrench } from "lucide-react";
 
 const techCategories = [
     {
         title: "Backend",
         icon: Server,
-        technologies: [
-            ".NET",
-            "ASP.NET Core",
-            "C#",
-            "Node.js",
-            "Express",
-            "REST APIs",
-            "JWT",
-            "WebSockets"
-        ],
+        technologies: [".NET", "ASP.NET Core", "C#", "Node.js", "Express", "REST APIs", "JWT", "WebSockets"],
     },
     {
         title: "Frontend",
         icon: Code,
-        technologies: [
-            "React",
-            "Next.js",
-            "AngularJS",
-            "TypeScript",
-            "Tailwind CSS",
-            "TanStack Query",
-            "Redux",
-            "Zustand",
-            "React Native"
-        ],
+        technologies: ["React", "Next.js", "AngularJS", "TypeScript", "Tailwind CSS", "TanStack Query", "Redux", "Zustand", "React Native"],
     },
     {
         title: "Bases de Datos",
         icon: Database,
-        technologies: [
-            "PostgreSQL",
-            "MySQL",
-            "MongoDB"
-        ],
+        technologies: ["PostgreSQL", "MySQL", "MongoDB"],
     },
     {
         title: "ORMs y Acceso a Datos",
         icon: Layers3,
-        technologies: [
-            "Entity Framework",
-            "Prisma"
-        ],
+        technologies: ["Entity Framework", "Prisma"],
     },
     {
         title: "Cloud y DevOps",
         icon: Cloud,
-        technologies: [
-            "Docker",
-            "Vercel",
-            "Render"
-        ],
+        technologies: ["Docker", "Vercel", "Render"],
     },
     {
         title: "Testing",
         icon: Wrench,
-        technologies: [
-            "xUnit",
-            "Moq",
-            "Jest",
-        ],
+        technologies: ["xUnit", "Moq", "Jest"],
     },
     {
         title: "Herramientas",
         icon: ToolCase,
-        technologies: [
-            "Git",
-            "GitHub",
-            "Postman"
-        ],
+        technologies: ["Git", "GitHub", "Postman"],
     },
     {
         title: "Arquitectura y Metodologías",
         icon: BookOpenText,
-        technologies: [
-            "Clean Architecture",
-            "SOLID",
-            "Scrum"
-        ],
+        technologies: ["Clean Architecture", "SOLID", "Scrum"],
     },
 ];
 
 export function TechStack() {
     return (
-        <section id="tech-stack" className="py-24 px-6 bg-gradient-to-b from-[#0f172a] to-slate-900">
-            <div className="max-w-7xl mx-auto">
+        <section id="tech-stack" className="border-b border-stone-200 bg-white px-6 py-24">
+            <div className="mx-auto max-w-6xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
+                    className="mb-14 max-w-2xl"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                        Stack Tecnológico
+                    <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-teal-700">Stack</p>
+                    <h2 className="text-4xl font-semibold tracking-normal text-stone-950 md:text-5xl">
+                        Herramientas para construir de punta a punta.
                     </h2>
-                    <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
-                        Tecnologías y herramientas que utilizo para transformar ideas en soluciones funcionales.
-                    </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-stone-200 bg-stone-200 md:grid-cols-2">
                     {techCategories.map((category, categoryIndex) => {
                         const Icon = category.icon;
                         return (
                             <motion.div
-                                key={categoryIndex}
-                                initial={{ opacity: 0, y: 20 }}
+                                key={category.title}
+                                initial={{ opacity: 0, y: 18 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
-                                className="bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-sm border border-cyan-500/10 rounded-2xl p-6 hover:border-cyan-500/20 transition-all shadow-lg"
+                                transition={{ duration: 0.5, delay: categoryIndex * 0.04 }}
+                                className="bg-white p-6"
                             >
-                                {/* Category Header */}
-                                <div className="flex items-center gap-3 mb-6">
-                                    <div className="w-10 h-10 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-xl flex items-center justify-center">
-                                        <Icon className="w-5 h-5 text-cyan-400" />
-                                    </div>
-                                    <h3 className="text-xl font-semibold text-white">
+                                <div className="mb-5 flex items-center gap-3">
+                                    <Icon className="h-5 w-5 text-teal-700" />
+                                    <h3 className="text-lg font-semibold text-stone-950">
                                         {category.title}
                                     </h3>
                                 </div>
 
-                                {/* Technologies */}
-                                <div className="flex flex-wrap gap-3">
-                                    {category.technologies.map((tech, techIndex) => (
-                                        <motion.div
-                                            key={techIndex}
-                                            initial={{ opacity: 0, scale: 0.8 }}
-                                            whileInView={{ opacity: 1, scale: 1 }}
-                                            viewport={{ once: true }}
-                                            transition={{
-                                                duration: 0.3,
-                                                delay: categoryIndex * 0.1 + techIndex * 0.05,
-                                            }}
-                                            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-                                            className="px-4 py-2 bg-slate-900/60 border border-cyan-500/20 rounded-lg text-sm text-gray-200 hover:text-cyan-300 hover:border-cyan-500/40 hover:bg-slate-900/80 transition-all shadow-sm hover:shadow-cyan-500/20 cursor-default"
+                                <div className="flex flex-wrap gap-2">
+                                    {category.technologies.map((tech) => (
+                                        <span
+                                            key={tech}
+                                            className="rounded-md bg-stone-100 px-3 py-1.5 text-sm text-stone-700"
                                         >
                                             {tech}
-                                        </motion.div>
+                                        </span>
                                     ))}
                                 </div>
                             </motion.div>

@@ -1,24 +1,22 @@
-'use client';
+"use client";
 
 import { motion } from "motion/react";
 import { ProjectCard } from "./custom/ProjectCard";
-
 
 const projects = [
     {
         title: "E-commerce",
         description:
-            "Tienda en línea con funcionalidades completas, integración de pagos, gestión de inventario y sistema avanzado de filtrado de productos.",
-        image: "/assets/ecommerce2.webp",
+            "Tienda en línea con pagos, gestión de inventario y filtrado avanzado de productos. Una experiencia de compra construida con Next.js y foco en flujo completo.",
+        image: "/assets/teslo-new-design.webp",
         tags: ["Next.js", "PayPal API", "Prisma", "Postgres", "Tailwind CSS"],
         liveUrl: "https://next-teslo-shop-bay-one.vercel.app/",
         githubUrl: "https://github.com/clopez9518/next-teslo-shop",
     },
-
     {
         title: "Movies Platform",
         description:
-            "API RESTful construida en .NET bajo Clean Architecture, separando responsabilidades en capas de dominio, aplicación, infraestructura y presentación. Aplica principios SOLID, Dependency Injection y patrones orientados a bajo acoplamiento y alta cohesión. Incluye autenticación basada en JWT, manejo de perfiles de usuario, gestión de catálogo de películas, listas personalizadas y paginación eficiente. Diseñada como backend escalable para un frontend de streaming desarrollado en React.",
+            "Backend escalable en .NET con Clean Architecture, JWT, perfiles de usuario, catálogo de películas, listas personalizadas y paginación eficiente para un frontend de streaming en React.",
         image: "/assets/movies-platform.webp",
         tags: [
             ".NET",
@@ -28,7 +26,7 @@ const projects = [
             "JWT Auth",
             "React",
             "TanStack Query",
-            "Tailwind CSS"
+            "Tailwind CSS",
         ],
         liveUrl: "https://react-frontend-movies.vercel.app/",
         githubUrl: "https://github.com/clopez9518/dotnet-backend-movies",
@@ -36,42 +34,37 @@ const projects = [
     {
         title: "Dota Random",
         description:
-            "Dota Random es una aplicación web para jugadores de Dota 2 que permite obtener héroes aleatorios según la posición seleccionada, como Carry, Mid, Offlane o Support. Los usuarios pueden personalizar el grupo de héroes disponibles para cada rol y generar recomendaciones de forma rápida mediante una interfaz moderna, minimalista y responsive.",
+            "Aplicación web para generar héroes aleatorios de Dota 2 por posición. Permite personalizar el grupo de héroes por rol con una interfaz moderna y responsive.",
         image: "/assets/dota-random.webp",
-        tags: [
-            "React",
-            "Shadcn",
-            "Tailwind CSS",
-            "Motion"
-        ],
+        tags: ["React", "Shadcn", "Tailwind CSS", "Motion"],
         liveUrl: "https://react-dota-random.vercel.app/",
         githubUrl: "https://github.com/clopez9518/react-dota-random",
-    }
+    },
 ];
 
 export function Projects() {
     return (
-        <section id="projects" className="py-24 px-6 bg-slate-900">
-            <div className="max-w-6xl mx-auto">
-
-                {/* Header */}
+        <section id="projects" className="border-b border-stone-200 bg-[#f7f6f1] px-6 py-24">
+            <div className="mx-auto max-w-6xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
+                    className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                        Proyectos Destacados
-                    </h2>
-
-                    <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
-                        Una selección de mis trabajos recientes y proyectos personales.
+                    <div className="max-w-2xl">
+                        <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-teal-700">Proyectos</p>
+                        <h2 className="text-4xl font-semibold tracking-normal text-stone-950 md:text-5xl">
+                            Selección de trabajos recientes.
+                        </h2>
+                    </div>
+                    <p className="max-w-sm leading-7 text-stone-600">
+                        Productos personales y técnicos donde combino frontend cuidado, backend robusto y decisiones de arquitectura claras.
                     </p>
                 </motion.div>
 
-                {/* Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+                <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
                     {projects.map((project, index) => (
                         <ProjectCard
                             key={project.title}

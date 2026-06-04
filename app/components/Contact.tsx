@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { motion } from "motion/react";
 import { useState } from "react";
@@ -35,7 +35,7 @@ export const Contact = () => {
                 body: JSON.stringify(formData),
             });
 
-            const data = await res.json();
+            await res.json();
 
             if (!res.ok) {
                 if (res.status === 429) {
@@ -49,14 +49,13 @@ export const Contact = () => {
                 throw new Error();
             }
 
-            toast.success("¡Mensaje enviado!", {
+            toast.success("Mensaje enviado", {
                 description: "Te contactaré pronto.",
                 richColors: true,
                 closeButton: true,
                 position: "top-center",
             });
             setFormData({ name: "", email: "", message: "" });
-
         } catch {
             toast.error("Error al enviar", {
                 description: "Intenta nuevamente.",
@@ -79,117 +78,110 @@ export const Contact = () => {
     };
 
     return (
-        <section id="contact" className="py-24 px-6 bg-[#0f172a]">
-            <div className="max-w-3xl mx-auto">
+        <section id="contact" className="bg-stone-950 px-6 py-24 text-white">
+            <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[0.8fr_1.2fr] md:items-start">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <div className="text-center mb-12">
-                        <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl mb-6">
-                            <Mail className="w-8 h-8 text-cyan-400" />
-                        </div>
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                            Contactame
-                        </h2>
-                        <p className="text-gray-400 max-w-2xl mx-auto">
-                            ¿Tienes un proyecto en mente o te interesa colaborar? No dudes en escribirme.
-                            Estoy abierto a conversar sobre nuevas oportunidades.
-                        </p>
-                    </div>
+                    <Mail className="mb-6 h-7 w-7 text-teal-300" />
+                    <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-teal-300">Contacto</p>
+                    <h2 className="text-4xl font-semibold tracking-normal md:text-5xl">
+                        Hablemos de tu próximo proyecto.
+                    </h2>
+                    <p className="mt-6 max-w-md leading-8 text-stone-300">
+                        Estoy abierto a nuevas oportunidades, colaboraciones y conversaciones técnicas con intención real de construir algo bien hecho.
+                    </p>
                 </motion.div>
 
-                <motion.div
+                <motion.form
+                    onSubmit={handleSubmit}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
+                    transition={{ duration: 0.6, delay: 0.12 }}
+                    className="rounded-lg border border-white/10 bg-white/[0.04] p-6"
                 >
-                    <form
-                        onSubmit={handleSubmit}
-                        className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-cyan-500/10 rounded-2xl p-8 shadow-xl"
-                    >
-                        <div className="space-y-6">
-                            <div>
-                                <label
-                                    htmlFor="name"
-                                    className="block text-sm font-medium text-gray-300 mb-2"
-                                >
-                                    Nombre
-                                </label>
-                                <Input
-                                    id="name"
-                                    name="name"
-                                    type="text"
-                                    required
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    placeholder="Tu nombre"
-                                    className="bg-slate-900/50 border-cyan-500/20 focus:border-cyan-500/50 text-white placeholder:text-gray-500 rounded-xl"
-                                />
-                            </div>
-
-                            <div>
-                                <label
-                                    htmlFor="email"
-                                    className="block text-sm font-medium text-gray-300 mb-2"
-                                >
-                                    Email
-                                </label>
-                                <Input
-                                    id="email"
-                                    name="email"
-                                    type="email"
-                                    required
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    placeholder="example@gmail.com"
-                                    className="bg-slate-900/50 border-cyan-500/20 focus:border-cyan-500/50 text-white placeholder:text-gray-500 rounded-xl"
-                                />
-                            </div>
-
-                            <div>
-                                <label
-                                    htmlFor="message"
-                                    className="block text-sm font-medium text-gray-300 mb-2"
-                                >
-                                    Mensaje
-                                </label>
-                                <Textarea
-                                    id="message"
-                                    name="message"
-                                    required
-                                    value={formData.message}
-                                    onChange={handleChange}
-                                    placeholder="Cuéntame sobre tu proyecto…"
-                                    rows={6}
-                                    className="bg-slate-900/50 border-cyan-500/20 focus:border-cyan-500/50 text-white placeholder:text-gray-500 rounded-xl resize-none"
-                                />
-                            </div>
-
-                            <Button
-                                type="submit"
-                                className="cursor-pointer w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-6 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all"
-                                disabled={loading}
+                    <div className="space-y-5">
+                        <div>
+                            <label
+                                htmlFor="name"
+                                className="mb-2 block text-sm font-medium text-stone-200"
                             >
-                                {loading ? (
-                                    <>
-                                        <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-                                        Enviando...
-                                    </>
-                                ) : (
-                                    <>
-                                        <Send className="w-5 h-5 mr-2" />
-                                        Enviar Mensaje
-                                    </>
-                                )}
-                            </Button>
+                                Nombre
+                            </label>
+                            <Input
+                                id="name"
+                                name="name"
+                                type="text"
+                                required
+                                value={formData.name}
+                                onChange={handleChange}
+                                placeholder="Tu nombre"
+                                className="h-12 rounded-lg border-white/10 bg-white/[0.06] text-white placeholder:text-stone-500 focus-visible:ring-teal-300"
+                            />
                         </div>
-                    </form>
-                </motion.div>
+
+                        <div>
+                            <label
+                                htmlFor="email"
+                                className="mb-2 block text-sm font-medium text-stone-200"
+                            >
+                                Email
+                            </label>
+                            <Input
+                                id="email"
+                                name="email"
+                                type="email"
+                                required
+                                value={formData.email}
+                                onChange={handleChange}
+                                placeholder="example@gmail.com"
+                                className="h-12 rounded-lg border-white/10 bg-white/[0.06] text-white placeholder:text-stone-500 focus-visible:ring-teal-300"
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                htmlFor="message"
+                                className="mb-2 block text-sm font-medium text-stone-200"
+                            >
+                                Mensaje
+                            </label>
+                            <Textarea
+                                id="message"
+                                name="message"
+                                required
+                                value={formData.message}
+                                onChange={handleChange}
+                                placeholder="Cuéntame sobre tu proyecto..."
+                                rows={6}
+                                className="resize-none rounded-lg border-white/10 bg-white/[0.06] text-white placeholder:text-stone-500 focus-visible:ring-teal-300"
+                            />
+                        </div>
+
+                        <Button
+                            type="submit"
+                            className="h-12 w-full cursor-pointer rounded-lg bg-white text-stone-950 hover:bg-stone-200"
+                            disabled={loading}
+                        >
+                            {loading ? (
+                                <>
+                                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                                    Enviando...
+                                </>
+                            ) : (
+                                <>
+                                    <Send className="mr-2 h-5 w-5" />
+                                    Enviar mensaje
+                                </>
+                            )}
+                        </Button>
+                    </div>
+                </motion.form>
             </div>
         </section>
     );
-}
+};
