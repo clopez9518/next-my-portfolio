@@ -23,7 +23,7 @@ export const Hero = () => {
                     <button onClick={() => scrollToSection("contact")} className="cursor-pointer transition-colors hover:text-stone-950">Contacto</button>
                 </div>
                 <div className="flex items-center gap-2">
-                    <a
+                    {/* <a
                         href="https://github.com/clopez9518"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -40,11 +40,11 @@ export const Hero = () => {
                         aria-label="Visitar LinkedIn"
                     >
                         <Linkedin className="h-4 w-4" />
-                    </a>
+                    </a> */}
                 </div>
             </nav>
 
-            <div className="mx-auto grid min-h-[calc(100vh-100px)] max-w-6xl grid-cols-1 gap-14 px-6 pb-16  md:grid-cols-[0.92fr_1.08fr] md:items-center md:pb-24">
+            <div className="mx-auto grid min-h-[calc(100vh-100px)] max-w-6xl grid-cols-1 gap-14 px-6 pb-16  md:grid-cols-[0.92fr_1.08fr] md:items-center md:pb-36">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -84,12 +84,12 @@ export const Hero = () => {
                         </Button>
                     </div>
 
-                    <div className="mt-8 flex items-center gap-5 text-stone-500">
+                     <div className="mt-8 flex items-center gap-5 text-stone-500">
                         <a
                             href="https://github.com/clopez9518"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="transition-colors hover:text-stone-950"
+                            className="transition-colors hover:text-teal-700"
                             aria-label="GitHub"
                         >
                             <Github className="h-5 w-5" />
@@ -98,19 +98,20 @@ export const Hero = () => {
                             href="https://linkedin.com/in/carloslopez9518"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="transition-colors hover:text-stone-950"
+                            className="transition-colors hover:text-teal-700"
                             aria-label="LinkedIn"
                         >
                             <Linkedin className="h-5 w-5" />
                         </a>
                         <button
                             onClick={() => scrollToSection("contact")}
-                            className="cursor-pointer transition-colors hover:text-stone-950"
+                            className="cursor-pointer transition-colors hover:text-teal-700"
                             aria-label="Ir a contacto"
                         >
                             <Mail className="h-5 w-5" />
                         </button>
                     </div>
+
                 </motion.div>
 
                 <motion.div
@@ -174,6 +175,20 @@ export const Hero = () => {
                     </div>
                 </motion.div>
             </div>
+
+            <motion.div
+                className="absolute bottom-8 left-1/2 -translate-x-1/2"
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+            >
+                <div className="w-6 h-10 border-2 mb-15 border-teal-700 rounded-full flex items-start justify-center p-2">
+                    <motion.div
+                        className="w-1.5 h-1.5 bg-teal-700 rounded-full"
+                        animate={{ y: [0, 12, 0] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                    />
+                </div>
+            </motion.div>
         </section>
     );
 };
