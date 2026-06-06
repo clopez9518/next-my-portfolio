@@ -8,15 +8,19 @@ const experiences = [
         title: "Desarrollador Fullstack",
         company: "KIS Chile",
         period: "03/2024 - 07/2025",
-        description:
-            "Participé en la migración de aplicaciones legacy desarrolladas en Visual Basic hacia AngularJS para la Bolsa de Comercio de Santiago.",
+        description:[
+            "Participé en la migración de aplicaciones financieras legacy desarrolladas en Visual Basic hacia AngularJS para la Bolsa de Comercio de Santiago.",
+            "Automatización de procesos con Python, transferencia de archivos mediante SFTP e integración de datos con Power Automate.",
+            "Tecnologías: AngularJS, JavaScript, TypeScript, Python, SQL Server, Power Automate, REST APIs, Git."
+        ]
+            // "Participé en la migración de aplicaciones legacy desarrolladas en Visual Basic hacia AngularJS para la Bolsa de Comercio de Santiago.",
     },
     {
         title: "Práctica Profesional",
         company: "KIS Chile",
         period: "12/2023 - 02/2024",
-        description:
-            "Inicié mi carrera profesional como desarrollador frontend, participando en el desarrollo y mantenimiento de aplicaciones web.",
+        description: ["Inicié mi carrera profesional como desarrollador frontend, participando en el desarrollo y mantenimiento de aplicaciones web."],
+            
     },
 ];
 
@@ -62,7 +66,11 @@ export const Experience = () => {
                                     {exp.title}
                                 </h3>
                                 <p className="mt-4 leading-8 text-stone-600">
-                                    {exp.description}
+                                    {exp.description.map((line, i) => (
+                                        <span key={i} className="block mt-2">
+                                            {line}
+                                        </span>
+                                    ))}
                                 </p>
                             </div>
                         </motion.article>

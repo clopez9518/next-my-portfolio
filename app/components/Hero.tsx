@@ -22,29 +22,40 @@ export const Hero = () => {
                     <button onClick={() => scrollToSection("projects")} className="cursor-pointer transition-colors hover:text-stone-950">Proyectos</button>
                     <button onClick={() => scrollToSection("contact")} className="cursor-pointer transition-colors hover:text-stone-950">Contacto</button>
                 </div>
-                <div className="flex items-center gap-2">
-                    {/* <a
+                <div className="h-9 w-29" aria-hidden="true" />
+            </nav>
+
+            <div className="mx-auto flex max-w-6xl justify-center px-6 pt-12 md:pt-16">
+                <div className="flex items-center gap-6 text-stone-500">
+                    <a
                         href="https://github.com/clopez9518"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-stone-300 text-stone-700 transition-colors hover:border-stone-950 hover:text-stone-950"
-                        aria-label="Visitar GitHub"
+                        className="transition-colors hover:text-teal-700"
+                        aria-label="GitHub"
                     >
-                        <Github className="h-4 w-4" />
+                        <Github className="h-5 w-5" />
                     </a>
                     <a
-                        href="https://linkedin.com/in/carloslopez9518"
+                        href="https://www.linkedin.com/in/carlos-lópez-rodríguez-8b249424a"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-stone-300 text-stone-700 transition-colors hover:border-stone-950 hover:text-stone-950"
-                        aria-label="Visitar LinkedIn"
+                        className="transition-colors hover:text-teal-700"
+                        aria-label="LinkedIn"
                     >
-                        <Linkedin className="h-4 w-4" />
-                    </a> */}
+                        <Linkedin className="h-5 w-5" />
+                    </a>
+                    <button
+                        onClick={() => scrollToSection("contact")}
+                        className="cursor-pointer transition-colors hover:text-teal-700"
+                        aria-label="Ir a contacto"
+                    >
+                        <Mail className="h-5 w-5" />
+                    </button>
                 </div>
-            </nav>
+            </div>
 
-            <div className="mx-auto grid min-h-[calc(100vh-100px)] max-w-6xl grid-cols-1 gap-14 px-6 pb-16  md:grid-cols-[0.92fr_1.08fr] md:items-center md:pb-36">
+            <div className="mx-auto grid min-h-[calc(100vh-300px)] max-w-6xl grid-cols-1 gap-14 px-6 pb-16 md:grid-cols-[0.92fr_1.08fr] md:items-center md:pb-32 mb-30">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -83,35 +94,6 @@ export const Hero = () => {
                             <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
                     </div>
-
-                     <div className="mt-8 flex items-center gap-5 text-stone-500">
-                        <a
-                            href="https://github.com/clopez9518"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="transition-colors hover:text-teal-700"
-                            aria-label="GitHub"
-                        >
-                            <Github className="h-5 w-5" />
-                        </a>
-                        <a
-                            href="https://linkedin.com/in/carloslopez9518"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="transition-colors hover:text-teal-700"
-                            aria-label="LinkedIn"
-                        >
-                            <Linkedin className="h-5 w-5" />
-                        </a>
-                        <button
-                            onClick={() => scrollToSection("contact")}
-                            className="cursor-pointer transition-colors hover:text-teal-700"
-                            aria-label="Ir a contacto"
-                        >
-                            <Mail className="h-5 w-5" />
-                        </button>
-                    </div>
-
                 </motion.div>
 
                 <motion.div
@@ -181,9 +163,9 @@ export const Hero = () => {
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
             >
-                <div className="w-6 h-10 border-2 mb-15 border-teal-700 rounded-full flex items-start justify-center p-2">
+                <div className="mb-15 flex h-10 w-6 items-start justify-center rounded-full border-2 border-teal-700 p-2">
                     <motion.div
-                        className="w-1.5 h-1.5 bg-teal-700 rounded-full"
+                        className="h-1.5 w-1.5 rounded-full bg-teal-700"
                         animate={{ y: [0, 12, 0] }}
                         transition={{ duration: 2, repeat: Infinity }}
                     />
