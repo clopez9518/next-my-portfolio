@@ -5,15 +5,6 @@ import { ProjectCard } from "./custom/ProjectCard";
 
 const projects = [
     {
-        title: "E-commerce",
-        description:
-            "Tienda en línea con pagos, gestión de inventario y filtrado avanzado de productos. Una experiencia de compra construida con Next.js y foco en flujo completo.",
-        image: "/assets/teslo-new-design.webp",
-        tags: ["Next.js", "PayPal API", "Prisma", "Postgres", "Tailwind CSS"],
-        liveUrl: "https://next-teslo-shop-bay-one.vercel.app/",
-        githubUrl: "https://github.com/clopez9518/next-teslo-shop",
-    },
-    {
         title: "Movies Platform",
         description:
             "Backend escalable en .NET con Clean Architecture, JWT, perfiles de usuario, catálogo de películas, listas personalizadas y paginación eficiente para un frontend de streaming en React.",
@@ -30,6 +21,15 @@ const projects = [
         ],
         liveUrl: "https://react-frontend-movies.vercel.app/",
         githubUrl: "https://github.com/clopez9518/dotnet-backend-movies",
+    },
+    {
+        title: "E-commerce",
+        description:
+            "Tienda en línea con pagos, gestión de inventario y filtrado avanzado de productos. Una experiencia de compra construida con Next.js y foco en flujo completo.",
+        image: "/assets/teslo-new-design.webp",
+        tags: ["Next.js", "PayPal API", "Prisma", "Postgres", "Tailwind CSS"],
+        liveUrl: "https://next-teslo-shop-bay-one.vercel.app/",
+        githubUrl: "https://github.com/clopez9518/next-teslo-shop",
     },
     {
         title: "Dota Random",

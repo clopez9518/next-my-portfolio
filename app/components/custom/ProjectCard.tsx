@@ -24,7 +24,7 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
             transition={{ duration: 0.6, delay: index * 0.08 }}
             className="group flex h-full flex-col overflow-hidden rounded-lg border border-stone-200 bg-white shadow-sm transition-colors hover:border-stone-300"
         >
-            <div className="relative aspect-[16/10] overflow-hidden bg-stone-100">
+            <div className="relative aspect-16/10 overflow-hidden bg-stone-100">
                 <ImageWithFallback
                     src={project.image}
                     alt={project.title}

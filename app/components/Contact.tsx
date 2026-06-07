@@ -102,7 +102,7 @@ export const Contact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.12 }}
-                    className="rounded-lg border border-white/10 bg-white/[0.04] p-6"
+                    className="rounded-lg border border-white/10 bg-white/4 p-6"
                 >
                     <div className="space-y-5">
                         <div>
@@ -120,7 +120,7 @@ export const Contact = () => {
                                 value={formData.name}
                                 onChange={handleChange}
                                 placeholder="Tu nombre"
-                                className="h-12 rounded-lg border-white/10 bg-white/[0.06] text-white placeholder:text-stone-500 focus-visible:ring-teal-300"
+                                className="h-12 rounded-lg border-white/10 bg-white/6 text-white placeholder:text-stone-500 focus-visible:ring-teal-300"
                             />
                         </div>
 
@@ -139,7 +139,7 @@ export const Contact = () => {
                                 value={formData.email}
                                 onChange={handleChange}
                                 placeholder="example@gmail.com"
-                                className="h-12 rounded-lg border-white/10 bg-white/[0.06] text-white placeholder:text-stone-500 focus-visible:ring-teal-300"
+                                className="h-12 rounded-lg border-white/10 bg-white/6 text-white placeholder:text-stone-500 focus-visible:ring-teal-300"
                             />
                         </div>
 
@@ -158,7 +158,7 @@ export const Contact = () => {
                                 onChange={handleChange}
                                 placeholder="Cuéntame sobre tu proyecto..."
                                 rows={6}
-                                className="resize-none rounded-lg border-white/10 bg-white/[0.06] text-white placeholder:text-stone-500 focus-visible:ring-teal-300"
+                                className="resize-none rounded-lg border-white/10 bg-white/6 text-white placeholder:text-stone-500 focus-visible:ring-teal-300"
                             />
                         </div>
 
