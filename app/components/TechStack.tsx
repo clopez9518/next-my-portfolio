@@ -59,7 +59,7 @@ export function TechStack() {
                 >
                     <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-teal-700">Stack</p>
                     <h2 className="text-4xl font-semibold tracking-normal text-stone-950 md:text-5xl">
-                        Herramientas para construir de punta a punta.
+                        Herramientas para convertir ideas en software.
                     </h2>
                 </motion.div>
 
