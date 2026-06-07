@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Carlos López | Portfolio",
   description: "Portfolio de Carlos López, desarrollador fullstack .NET y React.",
   icons: {
-    icon: "/favicon.png",
+    icon: "/favicon.svg",
   },
 };
 
