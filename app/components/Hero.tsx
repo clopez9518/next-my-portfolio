@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export const Hero = () => {
     const scrollToSection = (id: string) => {
@@ -54,7 +55,7 @@ export const Hero = () => {
                 </div>
             </div>
 
-            <div className="mx-auto grid min-h-[calc(100vh-300px)] max-w-6xl grid-cols-1 gap-14 px-6 pb-16 md:grid-cols-[0.92fr_1.08fr] md:items-center md:pb-32 mb-30">
+            <div className="mx-auto grid min-h-[calc(100vh-300px)] max-w-6xl grid-cols-1 gap-14 px-6 pb-16 md:grid-cols-2 md:items-center md:pb-32 mb-30">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -96,63 +97,47 @@ export const Hero = () => {
                 </motion.div>
 
                 <motion.div
-                    initial={{ opacity: 0, y: 26, rotate: -1 }}
+                    initial={{ opacity: 0, y: 30, rotate: -1 }}
                     animate={{ opacity: 1, y: 0, rotate: 0 }}
                     transition={{ duration: 0.8, delay: 0.12 }}
-                    className="relative mx-auto w-full max-w-xl"
+                    className="relative mx-auto w-full max-w-sm aspect-square md:max-w-md"
                 >
-                    <div className="absolute -inset-4 rotate-3 rounded-xl bg-teal-700/10" />
+                    {/* Efectos decorativos de fondo con el estilo original */}
+                    <div className="absolute -inset-4 rotate-3 rounded-2xl bg-teal-700/10" />
                     <div className="absolute -inset-7 -z-10 rounded-full bg-teal-700/10 blur-3xl" />
+                    <div className="absolute inset-0 -rotate-2 rounded-2xl border border-stone-300 bg-stone-100/50" />
 
-                    <div className="group relative overflow-hidden rounded-xl border border-stone-300 bg-stone-950 shadow-2xl shadow-stone-300/60 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-stone-400/60">
-                        <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
-                            <div className="flex items-center gap-2">
-                                <span className="h-3 w-3 rounded-full bg-red-400" />
-                                <span className="h-3 w-3 rounded-full bg-amber-400" />
-                                <span className="h-3 w-3 rounded-full bg-teal-400" />
-                            </div>
-                            <span className="font-mono text-xs text-stone-400">developer.ts</span>
+                    {/* Contenedor principal de la foto en formato tarjeta */}
+                    <div className="group relative h-full w-full overflow-hidden rounded-2xl border border-stone-300 bg-white p-3 shadow-2xl shadow-stone-300/60 transition-all duration-500 ease-out hover:-translate-y-2 hover:rotate-1 hover:shadow-stone-400/60">
+                        <div className="relative h-full w-full overflow-hidden rounded-xl bg-stone-50">
+                            <Image
+                                src="/assets/profile-photo.png"
+                                alt="Carlos López"
+                                fill
+                                priority
+                                sizes="(max-w-768px) 100vw, 50vw"
+                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
                         </div>
 
-                        <pre className="overflow-hidden px-6 py-7 font-mono text-sm leading-7 text-stone-300 md:text-base md:leading-8">
-                            <code>
-                                <span className="text-stone-500">{"// Full-Stack Developer"}</span>{"\n"}
-                                <span className="text-teal-300">const</span>{" "}
-                                <span className="text-sky-300">developer</span>{" "}
-                                <span className="text-stone-400">=</span>{" "}
-                                <span className="text-amber-300">{"{"}</span>{"\n"}
-                                {"  "}
-                                <span className="text-purple-300">name</span>
-                                <span className="text-stone-400">:</span>{" "}
-                                <span className="text-emerald-300">{"'Carlos López'"}</span>
-                                <span className="text-stone-400">,</span>{"\n"}
-                                {"  "}
-                                <span className="text-purple-300">stack</span>
-                                <span className="text-stone-400">:</span>{" "}
-                                <span className="text-stone-400">[</span>
-                                <span className="text-emerald-300">{"'.NET'"}</span>
-                                <span className="text-stone-400">, </span>
-                                <span className="text-emerald-300">{"'React'"}</span>
-                                <span className="text-stone-400">, </span>
-                                <span className="text-emerald-300">{"'Next.js'"}</span>
-                                <span className="text-stone-400">],</span>{"\n"}
-                                {"  "}
-                                <span className="text-purple-300">focus</span>
-                                <span className="text-stone-400">:</span>{" "}
-                                <span className="text-stone-400">[</span>
-                                <span className="text-emerald-300">{"'Clean Architecture'"}</span>
-                                <span className="text-stone-400">, </span>
-                                <span className="text-emerald-300">{"'UI funcional'"}</span>
-                                <span className="text-stone-400">],</span>{"\n"}
-                                {"  "}
-                                <span className="text-purple-300">building</span>
-                                <span className="text-stone-400">:</span>{" "}
-                                <span className="text-emerald-300">{"'Productos escalables'"}</span>
-                                <span className="text-stone-400">,</span>{"\n"}
-                                <span className="text-amber-300">{"}"}</span>
-                                <span className="text-stone-400">;</span>
-                            </code>
-                        </pre>
+                        {/* Badges/Etiquetas flotantes con animaciones sutiles */}
+                        <motion.div
+                            className="absolute -right-4 bottom-10 rounded-lg border border-stone-200 bg-white/95 px-4 py-2 shadow-lg backdrop-blur-sm select-none"
+                            initial={{ x: 20, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ duration: 0.6, delay: 0.5 }}
+                        >
+                            <span className="text-xs font-semibold text-teal-700">🚀 Full-Stack Developer</span>
+                        </motion.div>
+
+                        <motion.div
+                            className="absolute -left-4 top-10 rounded-lg border border-stone-200 bg-white/95 px-4 py-2 shadow-lg backdrop-blur-sm select-none"
+                            initial={{ x: -20, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ duration: 0.6, delay: 0.3 }}
+                        >
+                            <span className="text-xs font-semibold text-stone-700">💻 .NET & React</span>
+                        </motion.div>
                     </div>
                 </motion.div>
             </div>
