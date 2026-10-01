@@ -74,7 +74,15 @@ export const Hero = () => {
                     transition={{ duration: 0.8 }}
                     className="max-w-xl"
                 >
-                    <p className="mb-5 text-sm font-medium tracking-wide text-teal-700">
+                    <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-600/20 bg-emerald-50/90 px-3.5 py-1.5 text-xs font-medium text-emerald-800 shadow-xs">
+                        <span className="relative flex h-2 w-2">
+                            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+                        </span>
+                        Disponible para nuevos proyectos • Remoto / Presencial
+                    </div>
+
+                    <p className="mb-4 text-sm font-medium tracking-wide text-teal-700">
                         Hola, soy
                     </p>
                     <h1 className="text-5xl font-semibold leading-[0.98] tracking-normal text-stone-950 md:text-7xl">
