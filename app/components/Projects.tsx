@@ -5,6 +5,26 @@ import { ProjectCard } from "./custom/ProjectCard";
 
 const projects = [
     {
+        title: "AWS Quest",
+        description:
+            "AWS Quest es una plataforma interactiva para aprender arquitectura cloud resolviendo desafíos prácticos con servicios de AWS y desarrollando habilidades de diseño.",
+        image: "/assets/aws-quest.webp",
+        tags: [
+            "AWS",
+            "AWS Architecture",
+            "React",
+            "TypeScript",
+            ".NET",
+            "ASP.NET Core",
+            "PostgreSQL",
+            "Docker",
+            "REST API",
+            "Cloud Computing",
+        ],
+        liveUrl: "https://aws-quest.vercel.app/",
+        githubUrl: "https://github.com/clopez9518/aws-quest",
+    },
+    {
         title: "Movies Platform",
         description:
             "Backend escalable en .NET con Clean Architecture, JWT, perfiles de usuario, catálogo de películas, listas personalizadas y paginación eficiente para un frontend de streaming en React.",
@@ -31,15 +51,15 @@ const projects = [
         liveUrl: "https://next-teslo-shop-bay-one.vercel.app/",
         githubUrl: "https://github.com/clopez9518/next-teslo-shop",
     },
-    {
-        title: "Dota Random",
-        description:
-            "Aplicación web para generar héroes aleatorios de Dota 2 por posición. Permite personalizar el grupo de héroes por rol con una interfaz moderna y responsive.",
-        image: "/assets/dota-random.webp",
-        tags: ["React", "Shadcn", "Tailwind CSS", "Motion"],
-        liveUrl: "https://react-dota-random.vercel.app/",
-        githubUrl: "https://github.com/clopez9518/react-dota-random",
-    },
+    // {
+    //     title: "Dota Random",
+    //     description:
+    //         "Aplicación web para generar héroes aleatorios de Dota 2 por posición. Permite personalizar el grupo de héroes por rol con una interfaz moderna y responsive.",
+    //     image: "/assets/dota-random.webp",
+    //     tags: ["React", "Shadcn", "Tailwind CSS", "Motion"],
+    //     liveUrl: "https://react-dota-random.vercel.app/",
+    //     githubUrl: "https://github.com/clopez9518/react-dota-random",
+    // },
 ];
 
 export function Projects() {

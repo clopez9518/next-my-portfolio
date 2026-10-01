@@ -111,7 +111,7 @@ export const Hero = () => {
                     <div className="group relative h-full w-full overflow-hidden rounded-2xl border border-stone-300 bg-white p-3 shadow-2xl shadow-stone-300/60 transition-all duration-500 ease-out hover:-translate-y-2 hover:rotate-1 hover:shadow-stone-400/60">
                         <div className="relative h-full w-full overflow-hidden rounded-xl bg-stone-50">
                             <Image
-                                src="/assets/profile-photo.png"
+                                src="/assets/profile-photo.webp"
                                 alt="Carlos López"
                                 fill
                                 priority
