@@ -64,7 +64,7 @@ const projects = [
 
 export function Projects() {
     return (
-        <section id="projects" className="border-b border-stone-200 bg-[#f7f6f1] px-6 py-24">
+        <section id="projects" className="border-b border-stone-200 bg-[#f7f6f1] px-6 py-24 transition-colors duration-300 dark:border-stone-800 dark:bg-stone-950">
             <div className="mx-auto max-w-6xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -74,12 +74,12 @@ export function Projects() {
                     className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end"
                 >
                     <div className="max-w-2xl">
-                        <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-teal-700">Proyectos</p>
-                        <h2 className="text-4xl font-semibold tracking-normal text-stone-950 md:text-5xl">
+                        <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-teal-700 dark:text-teal-400">Proyectos</p>
+                        <h2 className="text-4xl font-semibold tracking-normal text-stone-950 dark:text-stone-50 md:text-5xl">
                             Selección de trabajos recientes.
                         </h2>
                     </div>
-                    <p className="max-w-sm leading-7 text-stone-600">
+                    <p className="max-w-sm leading-7 text-stone-600 dark:text-stone-400">
                         Productos personales y técnicos donde combino frontend cuidado, backend robusto y decisiones de arquitectura claras.
                     </p>
                 </motion.div>

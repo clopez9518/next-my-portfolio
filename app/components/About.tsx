@@ -28,7 +28,7 @@ const strengths = [
 
 export const About = () => {
     return (
-        <section id="about" className="border-b border-stone-200 bg-[#f7f6f1] px-6 py-24">
+        <section id="about" className="border-b border-stone-200 bg-[#f7f6f1] px-6 py-24 transition-colors duration-300 dark:border-stone-800 dark:bg-stone-950">
             <div className="mx-auto max-w-6xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -38,12 +38,12 @@ export const About = () => {
                     className="grid gap-10 md:grid-cols-[0.8fr_1.2fr]"
                 >
                     <div>
-                        <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-teal-700">Sobre mí</p>
-                        <h2 className="text-4xl font-semibold tracking-normal text-stone-950 md:text-5xl">
+                        <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-teal-700 dark:text-teal-400">Sobre mí</p>
+                        <h2 className="text-4xl font-semibold tracking-normal text-stone-950 dark:text-stone-50 md:text-5xl">
                             Desarrollo con criterio, no solo con código.
                         </h2>
                     </div>
-                    <p className="text-lg leading-8 text-stone-600">
+                    <p className="text-lg leading-8 text-stone-600 dark:text-stone-400">
                         Ingeniero Informático enfocado en desarrollo web fullstack y construcción de soluciones eficientes, escalables y bien estructuradas. Trabajo con tecnologías modernas del ecosistema JavaScript y .NET, aplicando buenas prácticas de arquitectura, diseño limpio y una mirada orientada al largo plazo.
                     </p>
                 </motion.div>
@@ -58,13 +58,13 @@ export const About = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: index * 0.08 }}
-                                className="rounded-lg border border-stone-200 bg-white/65 p-6 shadow-sm"
+                                className="rounded-lg border border-stone-200 bg-white/65 p-6 shadow-sm transition-colors dark:border-stone-800 dark:bg-stone-900/80"
                             >
-                                <Icon className="mb-5 h-5 w-5 text-teal-700" />
-                                <h3 className="mb-3 text-lg font-semibold text-stone-950">
+                                <Icon className="mb-5 h-5 w-5 text-teal-700 dark:text-teal-400" />
+                                <h3 className="mb-3 text-lg font-semibold text-stone-950 dark:text-stone-100">
                                     {strength.title}
                                 </h3>
-                                <p className="leading-7 text-stone-600">
+                                <p className="leading-7 text-stone-600 dark:text-stone-400">
                                     {strength.description}
                                 </p>
                             </motion.div>

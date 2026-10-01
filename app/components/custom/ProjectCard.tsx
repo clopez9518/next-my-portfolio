@@ -22,9 +22,9 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.08 }}
-            className="group flex h-full flex-col overflow-hidden rounded-lg border border-stone-200 bg-white shadow-sm transition-colors hover:border-stone-300"
+            className="group flex h-full flex-col overflow-hidden rounded-lg border border-stone-200 bg-white shadow-sm transition-colors hover:border-stone-300 dark:border-stone-800 dark:bg-stone-900 dark:hover:border-stone-700"
         >
-            <div className="relative aspect-16/10 overflow-hidden bg-stone-100">
+            <div className="relative aspect-16/10 overflow-hidden bg-stone-100 dark:bg-stone-950">
                 <ImageWithFallback
                     src={project.image}
                     alt={project.title}
@@ -35,11 +35,11 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
             </div>
 
             <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-2xl font-semibold text-stone-950">
+                <h3 className="text-2xl font-semibold text-stone-950 dark:text-stone-50">
                     {project.title}
                 </h3>
 
-                <p className="mt-4 leading-7 text-stone-600">
+                <p className="mt-4 leading-7 text-stone-600 dark:text-stone-300">
                     {project.description}
                 </p>
 
@@ -47,7 +47,7 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
                     {project.tags.map((tag) => (
                         <span
                             key={tag}
-                            className="rounded-md border border-stone-200 bg-stone-50 px-2.5 py-1 text-xs font-medium text-stone-600"
+                            className="rounded-md border border-stone-200 bg-stone-50 px-2.5 py-1 text-xs font-medium text-stone-600 dark:border-stone-700/60 dark:bg-stone-800/80 dark:text-stone-300"
                         >
                             {tag}
                         </span>
@@ -57,7 +57,7 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
                 <div className="mt-auto flex gap-3 pt-8">
                     <Button
                         asChild
-                        className="h-10 flex-1 rounded-lg bg-stone-950 text-white hover:bg-stone-800"
+                        className="h-10 flex-1 rounded-lg bg-stone-950 text-white hover:bg-stone-800 dark:bg-stone-100 dark:text-stone-950 dark:hover:bg-stone-200 cursor-pointer"
                     >
                         <a
                             href={project.liveUrl}
@@ -72,7 +72,7 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
                     <Button
                         asChild
                         variant="outline"
-                        className="h-10 flex-1 rounded-lg border-stone-300 bg-transparent text-stone-800 hover:bg-stone-50"
+                        className="h-10 flex-1 rounded-lg border-stone-300 bg-transparent text-stone-800 hover:bg-stone-50 dark:border-stone-700 dark:text-stone-200 dark:hover:bg-stone-800 cursor-pointer"
                     >
                         <Link
                             href={project.githubUrl}

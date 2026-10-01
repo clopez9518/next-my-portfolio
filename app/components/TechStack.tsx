@@ -48,7 +48,7 @@ const techCategories = [
 
 export function TechStack() {
     return (
-        <section id="tech-stack" className="border-b border-stone-200 bg-white px-6 py-24">
+        <section id="tech-stack" className="border-b border-stone-200 bg-white px-6 py-24 transition-colors duration-300 dark:border-stone-800 dark:bg-stone-900">
             <div className="mx-auto max-w-6xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -57,13 +57,13 @@ export function TechStack() {
                     transition={{ duration: 0.6 }}
                     className="mb-14 max-w-2xl"
                 >
-                    <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-teal-700">Stack</p>
-                    <h2 className="text-4xl font-semibold tracking-normal text-stone-950 md:text-5xl">
+                    <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-teal-700 dark:text-teal-400">Stack</p>
+                    <h2 className="text-4xl font-semibold tracking-normal text-stone-950 dark:text-stone-50 md:text-5xl">
                         Herramientas para convertir ideas en software.
                     </h2>
                 </motion.div>
 
-                <div className="grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-stone-200 bg-stone-200 md:grid-cols-2">
+                <div className="grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-stone-200 bg-stone-200 dark:border-stone-800 dark:bg-stone-800 md:grid-cols-2">
                     {techCategories.map((category, categoryIndex) => {
                         const Icon = category.icon;
                         return (
@@ -73,11 +73,11 @@ export function TechStack() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: categoryIndex * 0.04 }}
-                                className="bg-white p-6"
+                                className="bg-white p-6 transition-colors dark:bg-stone-900"
                             >
                                 <div className="mb-5 flex items-center gap-3">
-                                    <Icon className="h-5 w-5 text-teal-700" />
-                                    <h3 className="text-lg font-semibold text-stone-950">
+                                    <Icon className="h-5 w-5 text-teal-700 dark:text-teal-400" />
+                                    <h3 className="text-lg font-semibold text-stone-950 dark:text-stone-100">
                                         {category.title}
                                     </h3>
                                 </div>
@@ -86,7 +86,7 @@ export function TechStack() {
                                     {category.technologies.map((tech) => (
                                         <span
                                             key={tech}
-                                            className="rounded-md bg-stone-100 px-3 py-1.5 text-sm text-stone-700"
+                                            className="rounded-md bg-stone-100 px-3 py-1.5 text-sm text-stone-700 transition-colors dark:bg-stone-800 dark:text-stone-300"
                                         >
                                             {tech}
                                         </span>
