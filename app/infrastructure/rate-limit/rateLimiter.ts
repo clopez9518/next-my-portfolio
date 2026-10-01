@@ -4,8 +4,19 @@ const requests = new Map<string, { count: number; lastRequest: number }>();
 const WINDOW_MS = 60 * 1000;
 const MAX_REQUESTS = 3;
 
+function cleanupOldEntries(now: number) {
+    if (requests.size > 100) {
+        for (const [key, entry] of requests.entries()) {
+            if (now - entry.lastRequest > WINDOW_MS) {
+                requests.delete(key);
+            }
+        }
+    }
+}
+
 export function rateLimit(ip: string): boolean {
     const now = Date.now();
+    cleanupOldEntries(now);
 
     const entry = requests.get(ip);
 
