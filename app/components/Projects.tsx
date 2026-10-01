@@ -3,36 +3,60 @@
 import { motion } from "motion/react";
 import { ProjectCard } from "./custom/ProjectCard";
 
-const projects = [
+export type Project = {
+    title: string;
+    category: string;
+    architectureBadge: string;
+    description: string;
+    highlights: string[];
+    image: string;
+    tags: string[];
+    liveUrl: string;
+    githubUrl: string;
+};
+
+const projects: Project[] = [
     {
         title: "AWS Quest",
+        category: "Cloud Architecture & Learning",
+        architectureBadge: "AWS Cloud + .NET Core API",
         description:
-            "AWS Quest es una plataforma interactiva para aprender arquitectura cloud resolviendo desafíos prácticos con servicios de AWS y desarrollando habilidades de diseño.",
+            "Plataforma interactiva para el aprendizaje y simulación de arquitectura cloud, guiando al usuario en la resolución de desafíos prácticos con servicios reales de AWS.",
+        highlights: [
+            "Diseño e integración de servicios AWS con backend en ASP.NET Core.",
+            "Contenedorización en Docker y base de datos PostgreSQL.",
+            "Frontend modular de alta respuesta en React y TypeScript.",
+        ],
         image: "/assets/aws-quest.webp",
         tags: [
             "AWS",
-            "AWS Architecture",
-            "React",
-            "TypeScript",
             ".NET",
             "ASP.NET Core",
+            "React",
+            "TypeScript",
             "PostgreSQL",
             "Docker",
             "REST API",
-            "Cloud Computing",
         ],
         liveUrl: "https://aws-quest.vercel.app/",
         githubUrl: "https://github.com/clopez9518/aws-quest",
     },
     {
         title: "Movies Platform",
+        category: "Streaming & High Performance",
+        architectureBadge: "Clean Architecture + JWT",
         description:
-            "Backend escalable en .NET con Clean Architecture, JWT, perfiles de usuario, catálogo de películas, listas personalizadas y paginación eficiente para un frontend de streaming en React.",
+            "Sistema de streaming con backend robusto en .NET aplicando Clean Architecture, autenticación JWT, perfiles, listas personalizadas y paginación optimizada.",
+        highlights: [
+            "Arquitectura en capas (Domain, Application, Infrastructure, API).",
+            "Entity Framework Core con PostgreSQL y migraciones automatizadas.",
+            "Frontend optimizado con TanStack Query y caché reactiva.",
+        ],
         image: "/assets/movies-platform.webp",
         tags: [
             ".NET",
             "ASP.NET Core",
-            "Entity Framework Core",
+            "Clean Architecture",
             "PostgreSQL",
             "JWT Auth",
             "React",
@@ -43,23 +67,28 @@ const projects = [
         githubUrl: "https://github.com/clopez9518/dotnet-backend-movies",
     },
     {
-        title: "E-commerce",
+        title: "Teslo E-commerce",
+        category: "Full-Stack Application",
+        architectureBadge: "Next.js App Router + Prisma",
         description:
-            "Tienda en línea con pagos, gestión de inventario y filtrado avanzado de productos. Una experiencia de compra construida con Next.js y foco en flujo completo.",
+            "Tienda virtual completa con procesamiento internacional de pagos (PayPal), administración de catálogo, inventario en tiempo real y filtrado multicriterio.",
+        highlights: [
+            "Carrito persistente, checkout seguro y webhooks de pago.",
+            "Modelado relacional eficiente con Prisma ORM y PostgreSQL.",
+            "Server Components y Server Actions con Next.js.",
+        ],
         image: "/assets/teslo-new-design.webp",
-        tags: ["Next.js", "PayPal API", "Prisma", "Postgres", "Tailwind CSS"],
+        tags: [
+            "Next.js",
+            "Prisma ORM",
+            "PostgreSQL",
+            "PayPal API",
+            "Tailwind CSS",
+            "TypeScript",
+        ],
         liveUrl: "https://next-teslo-shop-bay-one.vercel.app/",
         githubUrl: "https://github.com/clopez9518/next-teslo-shop",
     },
-    // {
-    //     title: "Dota Random",
-    //     description:
-    //         "Aplicación web para generar héroes aleatorios de Dota 2 por posición. Permite personalizar el grupo de héroes por rol con una interfaz moderna y responsive.",
-    //     image: "/assets/dota-random.webp",
-    //     tags: ["React", "Shadcn", "Tailwind CSS", "Motion"],
-    //     liveUrl: "https://react-dota-random.vercel.app/",
-    //     githubUrl: "https://github.com/clopez9518/react-dota-random",
-    // },
 ];
 
 export function Projects() {
