@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, FileText, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
@@ -22,7 +22,19 @@ export const Hero = () => {
                     <button onClick={() => scrollToSection("projects")} className="cursor-pointer transition-colors hover:text-stone-950">Proyectos</button>
                     <button onClick={() => scrollToSection("contact")} className="cursor-pointer transition-colors hover:text-stone-950">Contacto</button>
                 </div>
-                <div className="h-9 w-29" aria-hidden="true" />
+                <div>
+                    <Button
+                        asChild
+                        variant="outline"
+                        size="sm"
+                        className="rounded-lg border-stone-300 bg-white/80 text-stone-800 hover:bg-white cursor-pointer shadow-xs"
+                    >
+                        <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+                            <FileText className="mr-1.5 h-3.5 w-3.5 text-teal-700" />
+                            Descargar CV
+                        </a>
+                    </Button>
+                </div>
             </nav>
 
             <div className="mx-auto flex max-w-6xl justify-center px-6 pt-12 md:pt-16">
@@ -77,7 +89,20 @@ export const Hero = () => {
                         Construyo soluciones web elegantes para problemas complejos con .NET, React y Clean Architecture.
                     </p>
 
-                    <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                    <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+                        <Button
+                            asChild
+                            className="h-12 cursor-pointer rounded-lg bg-teal-700 px-6 text-white hover:bg-teal-800 shadow-sm"
+                        >
+                            <a
+                                href="/cv.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FileText className="mr-2 h-4 w-4" />
+                                Descargar CV
+                            </a>
+                        </Button>
                         <Button
                             onClick={() => scrollToSection("contact")}
                             className="h-12 cursor-pointer rounded-lg bg-stone-950 px-6 text-white hover:bg-stone-800"
