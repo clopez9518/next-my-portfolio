@@ -89,6 +89,31 @@ const projects: Project[] = [
         liveUrl: "https://next-teslo-shop-bay-one.vercel.app/",
         githubUrl: "https://github.com/clopez9518/next-teslo-shop",
     },
+    {
+        title: "Trazzo",
+        category: "Interactive Canvas & Local-First",
+        architectureBadge: "Local-First + Tauri 2.0",
+        description:
+            "Pizarra virtual interactiva y diagramación rápida con estética hand-drawn, arquitectura local-first y ejecución híbrida en web PWA y escritorio nativo con Tauri.",
+        highlights: [
+            "Motor de lienzo multicapa a 60 FPS con Viewport Culling y Smart Binding.",
+            "Persistencia Local-First en IndexedDB, formato nativo .trazzo y exportación PNG/SVG.",
+            "Arquitectura monorepo pnpm con soporte PWA offline y shell de escritorio en Tauri 2.0.",
+        ],
+        image: "/assets/trazzo.webp",
+        tags: [
+            "TypeScript",
+            "React 19",
+            "Tailwind CSS",
+            "Tauri 2.0",
+            "Rust",
+            "Canvas API",
+            "IndexedDB",
+            "Zod",
+        ],
+        liveUrl: "https://trazzo-tau.vercel.app/",
+        githubUrl: "https://github.com/clopez9518/trazzo",
+    },
 ];
 
 export function Projects() {
