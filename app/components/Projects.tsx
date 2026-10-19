@@ -17,6 +17,36 @@ export type Project = {
 
 const projects: Project[] = [
     {
+        title: "Streamify",
+        category: "Full-Stack & Cloud Deployment",
+        architectureBadge: "Clean Architecture + AWS",
+        description:
+            "Plataforma de streaming con backend robusto en .NET aplicando Clean Architecture, autenticación JWT, perfiles, listas personalizadas y paginación optimizada.",
+        highlights: [
+            "Arquitectura en capas (Domain, Application, Infrastructure, API).",
+            "Despliegue automatizado con Github Actions, Amazon ECS y AWS Fargate.",
+            "Entity Framework Core con PostgreSQL y migraciones automatizadas.",
+            // "Frontend optimizado con TanStack Query y caché reactiva.",
+        ],
+        image: "/assets/movies-platform.webp",
+        tags: [
+            ".NET",
+            "ASP.NET Core",
+            "Clean Architecture",
+            "PostgreSQL",
+            "JWT Auth",
+            "Amazon ECS",
+            "AWS Fargate",
+            "Amazon ECR",
+            "Github Actions",
+            "Docker",
+            // "React",
+            // "TanStack Query",
+        ],
+        liveUrl: "https://streamify-eta-navy.vercel.app/",
+        githubUrl: "https://github.com/clopez9518/streamify",
+    },
+    {
         title: "AWS Quest",
         category: "Cloud Architecture & Learning",
         architectureBadge: "AWS Cloud + .NET Core API",
@@ -30,6 +60,7 @@ const projects: Project[] = [
         image: "/assets/aws-quest.webp",
         tags: [
             "AWS",
+            "EC2",
             ".NET",
             "ASP.NET Core",
             "React",
@@ -40,54 +71,6 @@ const projects: Project[] = [
         ],
         liveUrl: "https://aws-quest.vercel.app/",
         githubUrl: "https://github.com/clopez9518/aws-quest",
-    },
-    {
-        title: "Movies Platform",
-        category: "Streaming & High Performance",
-        architectureBadge: "Clean Architecture + JWT",
-        description:
-            "Sistema de streaming con backend robusto en .NET aplicando Clean Architecture, autenticación JWT, perfiles, listas personalizadas y paginación optimizada.",
-        highlights: [
-            "Arquitectura en capas (Domain, Application, Infrastructure, API).",
-            "Entity Framework Core con PostgreSQL y migraciones automatizadas.",
-            "Frontend optimizado con TanStack Query y caché reactiva.",
-        ],
-        image: "/assets/movies-platform.webp",
-        tags: [
-            ".NET",
-            "ASP.NET Core",
-            "Clean Architecture",
-            "PostgreSQL",
-            "JWT Auth",
-            "React",
-            "TanStack Query",
-            "Tailwind CSS",
-        ],
-        liveUrl: "https://react-frontend-movies.vercel.app/",
-        githubUrl: "https://github.com/clopez9518/dotnet-backend-movies",
-    },
-    {
-        title: "Teslo E-commerce",
-        category: "Full-Stack Application",
-        architectureBadge: "Next.js App Router + Prisma",
-        description:
-            "Tienda virtual completa con procesamiento internacional de pagos (PayPal), administración de catálogo, inventario en tiempo real y filtrado multicriterio.",
-        highlights: [
-            "Carrito persistente, checkout seguro y webhooks de pago.",
-            "Modelado relacional eficiente con Prisma ORM y PostgreSQL.",
-            "Server Components y Server Actions con Next.js.",
-        ],
-        image: "/assets/teslo-new-design.webp",
-        tags: [
-            "Next.js",
-            "Prisma ORM",
-            "PostgreSQL",
-            "PayPal API",
-            "Tailwind CSS",
-            "TypeScript",
-        ],
-        liveUrl: "https://next-teslo-shop-bay-one.vercel.app/",
-        githubUrl: "https://github.com/clopez9518/next-teslo-shop",
     },
     {
         title: "Trazzo",
@@ -113,6 +96,29 @@ const projects: Project[] = [
         ],
         liveUrl: "https://trazzo-tau.vercel.app/",
         githubUrl: "https://github.com/clopez9518/trazzo",
+    },
+    {
+        title: "Teslo E-commerce",
+        category: "Full-Stack Application",
+        architectureBadge: "Next.js App Router + Prisma",
+        description:
+            "Tienda virtual completa con procesamiento internacional de pagos (PayPal), administración de catálogo, inventario en tiempo real y filtrado multicriterio.",
+        highlights: [
+            "Carrito persistente, checkout seguro y webhooks de pago.",
+            "Modelado relacional eficiente con Prisma ORM y PostgreSQL.",
+            "Server Components y Server Actions con Next.js.",
+        ],
+        image: "/assets/teslo-new-design.webp",
+        tags: [
+            "Next.js",
+            "Prisma ORM",
+            "PostgreSQL",
+            "PayPal API",
+            "Tailwind CSS",
+            "TypeScript",
+        ],
+        liveUrl: "https://next-teslo-shop-bay-one.vercel.app/",
+        githubUrl: "https://github.com/clopez9518/next-teslo-shop",
     },
 ];
 
