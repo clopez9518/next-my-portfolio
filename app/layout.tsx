@@ -50,10 +50,10 @@ export const metadata: Metadata = {
     siteName: "Carlos López Portfolio",
     images: [
       {
-        url: "/assets/profile-photo.webp",
-        width: 800,
-        height: 800,
-        alt: "Carlos López - Ingeniero en Informática & Full Stack Developer",
+        url: "/assets/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Carlos López - Ingeniero en Informática & Full Stack Developer (.NET · React · PostgreSQL · AWS)",
       },
     ],
   },
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: "Carlos López | Ingeniero en Informática & Full Stack Developer",
     description:
       "Ingeniero en Informática y Full Stack Developer especializado en .NET, React, Next.js, PostgreSQL y AWS.",
-    images: ["/assets/profile-photo.webp"],
+    images: ["/assets/og-image.png"],
   },
   icons: {
     icon: "/favicon.svg",
